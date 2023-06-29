@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Drawing App</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./canvas.js" defer></script>
+</head>
+<body>
+    <div id="settings">
+        
+        <div class="settings_inner-div">
+            <label>Undo Redo</label>
+            <div>
+                <button id="undo">←</button>
+                <button id="redo">→</button>
+            </div>
+        </div>
+        <div class="settings_inner-div">
+            <label for="backgroundColorPicker">Background</label>
+            <input type="color" id="backgroundColorPicker" value="#344d50">
+        </div>
+        <div class="settings_inner-div">
+            <label for="colorPicker">Brush</label>
+            <input type="color" id="colorPicker" value="#adc7c7">
+        </div>
+        <div class="settings_inner-div">
+            <label for="lineSize">Brush Size</label>
+            <div>
+                <button onclick="stepDownSize(brushSizePicker, 1)">-</button>
+                <input type="number" min="1" max="1000" value="3" id="brushSize">
+                <button onclick="stepUpSize(brushSizePicker, 1)">+</button>
+            </div>
+        </div>
+        <div class="settings_inner-div">
+            <label for="shadowSize">Shadow Size</label>
+            <div>
+                <button onclick="stepDownSize(shadowSizePicker, 1)">-</button>
+                <input type="number" min="0" max="200" value="0" id="shadowSize">
+                <button onclick="stepUpSize(shadowSizePicker, 1)">+</button>
+            </div>
+        </div>
+        <div class="settings_inner-div">
+            <label for="colorRandomnesRange">Color Random</label>
+            <div>
+                <button onclick="stepDownSize(colorRandomnesRange, 5)">-</button>
+                <input type="number" min="0" max="200" value="0" id="colorRandomnesRange">
+                <button onclick="stepUpSize(colorRandomnesRange, 5)">+</button>
+            </div>
+        </div>
+        <div class="settings_inner-div">
+            <label for="width">Width & Height</label>
+            <div>
+                <input type="number" id="canvasWidth" min="10" max="2000" value="500">
+                <input type="number" id="canvasHeight" min="10" max="2000" value="500">
+            </div>
+        </div>
+    
+    </div>
+    <canvas id="canvas"></canvas>
+    
+</body>
+</html>
